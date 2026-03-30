@@ -1,0 +1,22 @@
+@font-face {
+  font-family: "Inter";
+  src: url(/fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+
+article {
+  margin: 4em;
+  max-width: 35em;
+  justify-self: center;
+
+  font-family: inter;
+  line-height: 1.6em;
+
+  h1 {
+    font-weight: 500;
+    line-height: 2em;
+  }
+
+  p:focus {
+    background-color: red;
+  }
+}
