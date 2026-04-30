@@ -34,6 +34,43 @@ body {
   }
 }
 
+header{
+  border-bottom: 1px solid rgb(60, 60, 60);   
+  padding: 2em 4em;
+  gap: 1em;
+  font-family: "Inter";
+  display: flex;
+  align-items: center;
+
+  span{
+    background-color: transparent;
+    padding: .2em .5em;
+    border-radius: .2em;
+    border: solid 1px white;
+  }
+
+  p{
+    display: none;
+  }
+
+  div{
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+    &:focus {
+      h2{
+        color: yellow;  
+      }
+
+      p{
+        display: block;
+
+      }
+    }
+  }
+}
+
 /* Dit is de linker kant */
 .texts {
   height: 100%;
@@ -138,7 +175,7 @@ body {
   width: 40vw;
   margin: 0em;
   padding: 2em;
-  overflow-y: scroll  ;
+  overflow-y: scroll;
 
   h2 {
     font-family: inter;
@@ -214,145 +251,6 @@ body {
   padding: 0 0 0.1em 0;
 }
 /* -------------------------------------------------------------------- */
-header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 0.75em 1.5em;
-  background-color: rgb(18, 18, 18);
-  border-bottom: 1px solid rgb(60, 60, 60);
-}
-
-#settings-toggle {
-  background: transparent;
-  color: white;
-  border: 1px solid rgb(80, 80, 80);
-  border-radius: 6px;
-  padding: 0.4em 0.9em;
-  font-family: inter;
-  font-size: 0.85rem;
-  cursor: pointer;
-
-  &:focus {
-    outline: 2px solid yellow;
-    outline-offset: 2px;
-  }
-
-  &:hover {
-    border-color: yellow;
-    color: yellow;
-  }
-}
-
-#settings-panel {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 1.5em;
-  z-index: 100;
-  background-color: rgb(33, 33, 33);
-  border: 1px solid rgb(80, 80, 80);
-  border-radius: 8px;
-  padding: 1.5em;
-  width: 360px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2em;
-
-  h2 {
-    font-family: inter;
-    font-size: 1rem;
-    font-weight: 500;
-    color: white;
-  }
-}
-
-#settings-panel[hidden] {
-  display: none;
-}
-
-.settings-uitleg {
-  font-family: inter;
-  font-size: 0.75rem;
-  color: rgb(160, 160, 160);
-  line-height: 1.5em;
-}
-
-.setting-row {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4em;
-
-  label {
-    font-family: inter;
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: white;
-  }
-
-  input {
-    background-color: rgb(45, 45, 45);
-    color: white;
-    border: 1px solid rgb(80, 80, 80);
-    border-radius: 6px;
-    padding: 0.5em 0.75em;
-    font-family: inter;
-    font-size: 0.85rem;
-    cursor: pointer;
-
-    &:focus {
-      outline: none;
-      border-color: yellow;
-    }
-  }
-}
-
-.setting-desc {
-  font-family: inter;
-  font-size: 0.7rem;
-  color: rgb(160, 160, 160);
-}
-
-.settings-actions {
-  display: flex;
-  gap: 0.75em;
-
-  button {
-    font-family: inter;
-    font-size: 0.8rem;
-    border-radius: 6px;
-    padding: 0.5em 1em;
-    cursor: pointer;
-    border: none;
-
-    &:focus {
-      outline: 2px solid white;
-      outline-offset: 2px;
-    }
-  }
-
-  #opslaan {
-    background-color: yellow;
-    color: black;
-    font-weight: 600;
-  }
-
-  #settings-sluiten {
-    background-color: transparent;
-    color: white;
-    border: 1px solid rgb(80, 80, 80);
-
-    &:hover {
-      border-color: white;
-    }
-  }
-}
-
-#opgeslagen-melding {
-  font-family: inter;
-  font-size: 0.75rem;
-  color: yellow;
-  min-height: 1.2em;
-}
 
 .note-save-btn {
   align-self: flex-end;
