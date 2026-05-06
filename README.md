@@ -120,3 +120,28 @@ Feedback Leonie:
 meer focussen op wat de screen reader zegt
 
 en het moet menselijk klinken
+
+## Reflectie
+
+**Wat ik heb geleerd**
+
+- Ik heb voornamelijk geleerd hoe blinde/slechtziende mensen een website besturen en wat er door hun gedachte heen gaat bij het gebruiken van een website.
+- Ik heb ook vooral geleerd wat roger fijn vind en wat en hoe gevoellig zijn ogen kunnen zijn.
+- Hoe vervelend een screenreader kan zijn om te bedienen als de website niet toegankelijk genoeg is gemaakt voor een screen reader.
+- Ook heb ik geleerd hoe en wat een screen reader leest en hoe je dat kan veranderen of waarom juist niet kan veranderen (volgende kopje).
+- Hoe je met aria labels de screenreader andere dingen kan laten zeggen om het wat natuurlijker over komt
+- En dat het belangrijk is wanner je de keuze maakt om de screenreader natuurlijk over te laten komen of juist H1 of Button laat zeggen. Want zolang het interactief is of iets zegt over de structuur van de pagina is het belangrijk om het zo te laten.
+
+**Wat ik de volgende keer niet meer ga doen:**
+
+ik heb de keuze gemaakt om checkboxes te gebruiken waarbij de voice over de text voorleest en de gebruiker makkelijk met spatie de checkbox kan aan vinken waardoor de text geasseerd word en daar notities op gemaakt kunnen worden. 
+
+Leonie had me al gewaarschuwd dat het niet de beste optie is om dat met een check box te doen omdat het daar niet echt voor bedoeld was. Aangezien dit een website voor Roger was wilde ik eerst kijken hoe Roger er mee over weg ging en dat ging goed. Hij vond het fijn te gebruiken en simpel te begrijpen. 
+
+bij het finetunen van de voice over wilde ik de “tickbox, unticked” verwijderen omdat het voor Roger beter klinkt als het natuurlijk klinkt. Ik ben er toen achtergekomen dat alle interactieve elementen voorgelezen moeten worden en dat het dus niet kan, ook niet met aria label hidden of door de role aan te passen. 
+
+Ik heb nu geleerd dat elk html element een functie heeft en dat je die functie ook alleen daar voor moet gebruiken en niet vervormen. 
+
+voor nu laat ik het zoals het is.
+
+https://chatgpt.com/share/69f32de6-7ef8-83eb-a121-f99789313875
