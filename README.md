@@ -121,8 +121,6 @@ meer focussen op wat de screen reader zegt
 
 en het moet menselijk klinken
 
-## Reflectie
-
 **Wat ik heb geleerd**
 
 - Ik heb voornamelijk geleerd hoe blinde/slechtziende mensen een website besturen en wat er door hun gedachte heen gaat bij het gebruiken van een website.
@@ -131,6 +129,22 @@ en het moet menselijk klinken
 - Ook heb ik geleerd hoe en wat een screen reader leest en hoe je dat kan veranderen of waarom juist niet kan veranderen (volgende kopje).
 - Hoe je met aria labels de screenreader andere dingen kan laten zeggen om het wat natuurlijker over komt
 - En dat het belangrijk is wanner je de keuze maakt om de screenreader natuurlijk over te laten komen of juist H1 of Button laat zeggen. Want zolang het interactief is of iets zegt over de structuur van de pagina is het belangrijk om het zo te laten.
+
+**Study situations**
+
+Hij vertelde dat hij filosofie studeert en het liefst op zijn telefoon werkt. Ook wil hij graag aantekeningen kunnen maken, maar liever niet met spraaknotities, omdat dat storend kan zijn voor medestudenten tijdens de les. Daarom moest er een andere manier komen om dit stil en toegankelijk te kunnen doen.
+
+**Ignore conventions**
+
+Doordat ik checkboxes gebruikte om tekst te markeren, heb ik ze ingezet op een manier waarvoor ze eigenlijk niet bedoeld zijn. Eerst dacht ik dat dit een goede oplossing was, maar later ontdekte ik dat dit problemen veroorzaakte met de screenreader (zie hier onder). Daardoor heb ik geleerd hoe belangrijk het is om rekening te houden met toegankelijkheid en de werking van hulpmiddelen zoals screenreaders. Verder werkte het perfect als ik wilde en Roger vond het een fijne gebruikers ervaring.
+
+**Prioritise identity**
+
+Je merkt dat er veel verschil zit tussen mensen met een visuele beperking. Roger kon bijvoorbeeld nog wel kleuren zien, maar gaf aan dat zijn ogen erg gevoelig zijn voor licht. Daardoor besefte ik hoe persoonlijk en verschillend toegankelijkheid kan zijn per gebruiker.
+
+**Add nonsense**
+
+Hoewel ik niet echt “nonsense” in de website zelf heb verwerkt, heb ik hier en daar wel kleine speelse elementen toegevoegd in de code. Daarnaast heb ik geprobeerd de screenreader zo goed mogelijk te ondersteunen. De focus van de screenreader loopt gelijk met de tabfocus, waardoor de website eenvoudig te bedienen en gebruiksvriendelijk blijft.
 
 **Wat ik de volgende keer niet meer ga doen:**
 
