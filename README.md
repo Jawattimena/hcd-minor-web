@@ -8,9 +8,11 @@ De opdracht die ik heb gekregen, is om een applicatie te ontwikkelen voor een bl
 
 Mijn eerste idee is dat de gebruiker met behulp van een screenreader door de website navigeert. De screenreader leest delen van de tekst voor, waarna Roger deze delen kan markeren. Elke “kleurmarker” staat voor een bepaalde categorie van annotaties. Op deze manier kan Roger zijn markeringen later eenvoudig terugvinden door te filteren op categorie.
 
-![Alt text](documents/IMG_6622.JPG)
+![idee](documents/IMG_6622.JPG)
 
 ## Dag 2 (test Rogier)
+
+![prototype-v1](<Screenshot 2026-05-09 at 12.50.50.png>)
 
 vandaag ben ik aan de slag gegaan om te kijken of ik stukjes text aan de hand van de screen reader kon markeren met een kleurtje. Het werkt en verder vond ik het lastig om al een werkend concept te maken.
 
@@ -85,15 +87,26 @@ Feedback Leonie:
 
 Pas op met de check boxes dat de screenreader niet in de war raakt of de gebruiker zelf
 
+## Dag 5
+
+Ik heb een `aria-label` toegevoegd aan de checkboxes en de zichtbare labels `aria-hidden` gemaakt. Hierdoor focust de screenreader alleen op de checkboxes. Door de zichtbare tekst in het `aria-label` van de checkbox op te nemen, leest de screenreader alsnog de juiste tekst voor, terwijl het interactieve element daadwerkelijk de checkbox blijft.
+
+Ik heb dit zo opgelost omdat de tabfocus en de focus van de screenreader niet synchroon liepen. Dat kon ervoor zorgen dat de screenreader een andere zin voorlas dan het element waarop de gebruiker daadwerkelijk focus had en waarmee interactie mogelijk was. Hierdoor ontstond verwarring tijdens het navigeren en gebruiken van de website.
+
+Met deze oplossing lopen de tabfocus en screenreaderfocus weer synchroon.
+
+De reden dat ik de checkboxes heb behouden, ondanks dat Leonie dit had afgeraden, is omdat Rogier tijdens het testen aangaf dat hij het prettig vindt om met de Tab-toets te navigeren. Binnen de huidige structuur werkt dat goed. Daarnaast kan hij met de spatiebalk eenvoudig tekst selecteren en uiteindelijk notities maken.
+
 ## Dag 6 (test Rogier)
 
-Test feedback:
+![prototype-v2](<Screenshot 2026-05-09 at 12.48.19.png>)
 
-Zelf sneltoetsen instellen vind hij fijn
+**Test feedback:**
+Tijdens het testen gaf Rogier aan dat de toetsenbordbediening prettig werkt. Navigeren met de Tab-toets verloopt duidelijk en efficiënt, wat zorgt voor een fijne gebruikerservaring.
 
-rood op zwart is lastig lees baar 
+Daarnaast kwam naar voren dat de combinatie van rode tekst op een zwarte achtergrond moeilijk leesbaar is. 
 
-moeite door dat de voice over op google chrome slecht werkt
+Ook ervaarde Rogier problemen met het gebruik van VoiceOver in combinatie met Google Chrome. De screenreader focuste niet altijd op de juiste content, waardoor navigeren lastig werd.
 
 ## WEEK 3
 
@@ -101,17 +114,26 @@ Feedback Leonie:
 
 Zorg dat je nog notities kan maken
 
+## Dag 7
+
+Rogier gaf aan dat rood op zwart moeilijk leesbaar was. Daarom heb ik deze styling zo snel mogelijk aangepast om de leesbaarheid te verbeteren.
+
+Tijdens het testen merkte ik ook dat hij moeite had om de website goed te gebruiken met de screenreader. Vooral de combinatie van VoiceOver en Google Chrome werkte niet optimaal. De focus kwam vaak op andere elementen terecht in plaats van op de tekst, waardoor navigeren lastig werd. Dit probleem heb ik opgelost zodat de focus nu correct op de relevante content terechtkomt.
+
+Daarnaast heb ik de mogelijkheid toegevoegd om notities te maken binnen de website. Rogier kan nu met de spatiebalk een checkbox aanvinken, waarna automatisch een notitie gemaakt kan worden. Hierdoor blijft de interactie eenvoudig en toegankelijk tijdens het navigeren met het toetsenbord.
+
 ## Dag 8 (test Rogier)
 
-Test feedback:
+![prototype-v3](<Screenshot 2026-05-09 at 13.03.54.png>)
 
-knop is te overheersend
+**Test feedback:**
+Tijdens het testen gaf Rogier aan dat de knop te overheersend aanwezig is in de interface. Deze valt te veel op en trekt onnodig aandacht weg van de rest van de content. Daarom is er behoefte aan een subtielere oplossing.
 
-knop mag weg als het gesaved is
+Daarnaast mag de knop verdwijnen zodra een notitie succesvol is opgeslagen. Dit zorgt ervoor dat de interface rustiger wordt en alleen relevante acties zichtbaar blijven op het juiste moment.
 
-een manier vinden om te kunnen switchen tussen de text en de notities.
+Ook is er behoefte aan een duidelijke manier om te kunnen schakelen tussen de tekstweergave en de notities. Dit moet intuïtief werken zonder dat de gebruiker de context verliest tijdens het navigeren.
 
-Notitie text mag groter
+Tot slot gaf Rogier aan dat de tekst van de notities groter mag worden weergegeven. Dit verbetert de leesbaarheid en maakt het eenvoudiger om de inhoud snel te scannen en te gebruiken.
 
 ## WEEK 4
 
