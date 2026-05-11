@@ -2,7 +2,7 @@
   --base-font-size: 1.5em;
   --h1-font-size: calc(var(--base-font-size) * 2);
   --h2-font-size: calc(var(--base-font-size) * 1.3);
-  --font-weight: 300;
+  --font-weight: 400;
 }
 
 @font-face {
@@ -22,7 +22,6 @@
   }
 }
 
-/* Dit is de structuur en de layout van de site waar de text gelezen wordt*/
 body {
   background-color: rgb(24, 24, 24);
   color: white;
@@ -34,50 +33,48 @@ body {
   }
 }
 
-header{
-  border-bottom: 1px solid rgb(60, 60, 60);   
+header {
+  border-bottom: 1px solid rgb(60, 60, 60);
   padding: 2em 4em;
   gap: 1em;
   font-family: "Inter";
   display: flex;
   align-items: center;
 
-  span{
+  span {
     background-color: transparent;
     padding: .2em .5em;
     border-radius: .2em;
     border: solid 1px white;
   }
 
-  p{
+  p {
     display: none;
   }
 
-  div{
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 
     &:focus {
-      h2{
-        color: yellow;  
+      h2 {
+        color: yellow;
       }
-
-      p{
+      p {
         display: block;
-
       }
     }
   }
 }
 
-/* Dit is de linker kant */
+/* Linker kolom */
 .texts {
   height: 100%;
   width: 60vw;
   overflow-y: scroll;
 
-  article {
+  #article {
     margin: 4em;
     display: flex;
     flex-direction: column;
@@ -103,17 +100,16 @@ header{
 
     .sentence-number {
       position: absolute;
-      vertical-align: baseline;
       display: flex;
       justify-content: center;
       align-items: center;
       left: -3em;
       width: 2em;
-      /* height: 1.5em; */
       font-size: calc(var(--base-font-size) * 0.5);
       font-weight: calc(var(--font-weight) * 1.5);
     }
 
+    /* De zin zelf — geen checkbox meer, de <p> is het enige element */
     .sentence {
       position: relative;
       margin: 0;
@@ -121,34 +117,24 @@ header{
       line-height: 1.7em;
       font-size: var(--base-font-size);
       font-weight: var(--font-weight);
-      position: relative;
+      cursor: default;
+      user-select: none;
 
-      input {
-        appearance: none;
-        border: none;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        position: absolute;
-      }
-      label {
-        padding: 0.5em 0;
-      }
-
-      &:has(input:checked) label {
+      /* Geselecteerde staat (Space ingedrukt) */
+      &[aria-selected="true"] {
         background-color: yellow;
         color: black;
 
         .sentence-number {
-          color: yellow;
+          color: black;
         }
       }
 
-      &:focus-within {
-        label {
-          color: yellow;
-        }
+      /* Focus staat */
+      &:focus-visible {
+        outline: 2px solid yellow;
+        outline-offset: 0.3em;
+        color: yellow;
 
         .sentence-number {
           color: black;
@@ -156,9 +142,11 @@ header{
         }
       }
 
-      &:has(input:checked):focus-within label {
+      /* Geselecteerd én gefocust */
+      &[aria-selected="true"]:focus-visible {
         background-color: yellow;
         color: black;
+        outline-color: white;
 
         .sentence-number {
           color: black;
@@ -168,7 +156,7 @@ header{
   }
 }
 
-/* Dit is de rechter kant van de website waar notities gemaakt worden */
+/* Rechter kolom — notities */
 .notities {
   border-left: 1px solid rgb(131, 131, 131);
   background-color: rgb(33, 33, 33);
@@ -184,27 +172,16 @@ header{
   }
 }
 
-/* Arcering bij checked */
-.sentence:has(input:checked) label {
-  background-color: yellow;
-  color: black;
-}
-
-/* Notitieblokken in de rechter kolom */
+/* Notitieblokken */
 .note-block {
   padding: 1.5em 0em;
   display: flex;
   flex-direction: column;
   gap: 0.5em;
-
   border-bottom: solid 1px rgba(80 80 80 / 0.4);
 
   &:has(textarea:focus) .note-verse-label {
-    
     background-color: rgba(255 255 0 / 0.3);
-    textaria {
-      color: yellow;
-    }
   }
 }
 
@@ -228,7 +205,7 @@ header{
   padding: 0.75em;
   font-family: inter;
   font-size: calc(var(--base-font-size) * 0.8);
-  font-weight: 300;
+  font-weight: var(--font-weight);
   line-height: 1.6em;
   resize: vertical;
   min-height: 80px;
@@ -240,7 +217,6 @@ header{
   }
 }
 
-/* Versnummer boven elke notitie (bv. "Genesis 1:1") */
 .note-verse-ref {
   font-family: inter;
   font-size: calc(var(--base-font-size) * 0.7);
@@ -250,17 +226,14 @@ header{
   color: yellow;
   padding: 0 0 0.1em 0;
 }
-/* -------------------------------------------------------------------- */
 
 .note-save-btn {
   align-self: flex-end;
-  /* background-color: yellow; */
   color: black;
   border: none;
   border-radius: 6px;
-  /* width: 50%; */
   margin: 1em 0;
-  padding: 01em 2em;
+  padding: 1em 2em;
   font-family: inter;
   font-size: 1rem;
   cursor: pointer;
