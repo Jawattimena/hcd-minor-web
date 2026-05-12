@@ -202,7 +202,7 @@ function getSavedSection() {
     section.setAttribute("aria-label", "Opgeslagen notities");
 
     const heading = document.createElement("h2");
-    heading.textContent = "Opgeslagen notities";
+    heading.textContent = "Saved notes";
     heading.id = "opgeslagen-notities-heading";
 
     const list = document.createElement("ul");
@@ -250,13 +250,13 @@ function addToSavedNotes(id, content, verseText) {
   const verseEl = document.createElement("p");
   verseEl.className = "note-verse-label";
   verseEl.textContent = verseText;
-  verseEl.setAttribute("aria-hidden", "true");
+  // verseEl.setAttribute("aria-hidden", "true");
 
   // De notitietekst zelf
   const contentEl = document.createElement("p");
   contentEl.className = "saved-note-content";
-  contentEl.textContent = content || "(geen tekst ingevoerd)";
-  contentEl.setAttribute("tabindex", "0");
+  contentEl.textContent = content || "(No text added)";
+  contentEl.setAttribute("tabindex", "-1");
 
   // Verwijderknop — volledig toegankelijk voor screen reader
   const deleteButton = document.createElement("button");
@@ -276,11 +276,9 @@ function addToSavedNotes(id, content, verseText) {
   li.appendChild(contentEl);
   li.appendChild(deleteButton);
 
-  // Geef het li element een aria-label zodat de screen reader de volledige context voorleest
+  // Maak het hele lijstitem focusbaar zodat screen reader eerst de notitie voorleest
   li.setAttribute(
-    "aria-label",
-    `note for ${book} ${chapter}:${verse}. versetext: ${verseText}. your note: ${content || "no text writen down"}.`
-  );
+    "tabindex", "0" );
 
   list.appendChild(li);
 }
@@ -362,21 +360,18 @@ function focusLeestekst() {
 }
 
 function focusNotities() {
-  // 1. Focus eerst de inhoud van een opgeslagen notitie
+  // 1. Focus eerst het eerste opgeslagen notitie-item
   const firstSavedItem = document.querySelector(".saved-note-item");
 
   if (firstSavedItem) {
-    const content = firstSavedItem.querySelector(".saved-note-content");
+    firstSavedItem.setAttribute("tabindex", "-1"); // tijdelijk focusbaar maken
+    firstSavedItem.focus();
 
-    if (content) {
-      content.setAttribute("tabindex", "-1"); // tijdelijk focusbaar maken
-      content.focus();
-      announce("Saved notes focused.");
-      return;
-    }
+    announce("Saved notes focused.");
+    return;
   }
 
-  // 2. Als er actieve textarea's zijn: focus daar
+  // 2. Als er geen opgeslagen notities zijn: focus actieve textarea's
   const textareas = document.querySelectorAll(".notities textarea");
   if (textareas.length > 0) {
     const empty = [...textareas].find((t) => t.value === "");
